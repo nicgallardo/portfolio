@@ -1,0 +1,73 @@
+extends layout
+
+block content
+  div(class="row")
+    div(class="col-md-12 height-quarter bg-white text-center")
+      div(class="col-md-2 col-md-offset-1")
+        img(src="images/ng_web_logo_large.png" class="nav-bar-img " width="85%")
+      div(class="col-md-2 height-quarter")  
+        div(class="nav-vert-center")  
+          h2(ng-model="about" ng-mouseover="about = true; work = false; contact = false") about
+      div(class="col-md-2 height-quarter")  
+        div(class="nav-vert-center")  
+          h2(ng-model="work" ng-mouseover="work = true; about = false; contact = false") work
+      div(class="col-md-2 height-quarter")  
+        div(class="nav-vert-center")    
+          h2(ng-model="contact" ng-mouseover="contact = true; about = false; work = false") contact
+  div(class="row bg-black")
+    div(class="col-md-offset-3 col-md-6 height-half about-div" ng-show="about")
+      h1(class="font-white") about
+        p
+          h3(class="font-white") Sixth generation Coloradoan back home after a decade of exploring the Carolinas. I am a Full Stack Devolper and a Graphic Designer. I bring a unique set of skills to teams with an expertise in code and design aesthetics.
+        p
+          h3(class="font-white") Building with both code and physical meterials is a passion of mine. When I am not busy coding you can usually find me in my workshop brewing beer, building a printing press or silk screen machine from scratch or just tinkering around. Engaging in the process of creating and building is a true passion of mine. 
+      div(class="col-md-1 col-md-offset-11")
+        h4(class="font-white" ng-mouseover="about = false")
+          span(class="glyphicon glyphicon-remove")
+    div(class="col-md-offset-3 col-md-6 height-half work-div" ng-show="work")
+      h1(class="font-white") work
+        p
+          h3(class="font-white")
+            a(href="http://galaxybomber.xyz") galaxybomber.xyz
+          img(src="images/galaxy.png")
+      div(class="col-md-1 col-md-offset-11")
+        h4(class="font-white" ng-mouseover="work = false")
+          span(class="glyphicon glyphicon-remove")
+          
+    div(class="col-md-offset-3 col-md-6 height-half" ng-show="contact")
+      h1(class="font-white") contact
+      div(class="row")
+        div(class="col-md-4")
+          h2(class="text-right")
+            span(class="font-white glyphicon glyphicon-phone-alt")
+        div(class="col-md-6")
+          h2(class="text-left font-white") 303-913-0999
+      div(class="row")  
+        div(class="col-md-4")
+          h2(class="text-right")
+            span(class="font-white glyphicon glyphicon-envelope")
+        div(class="col-md-6")
+          h2(class="text-left font-white")
+            //- a(href="mailto:nicgallardo@gmail.com?Subject=Hello%Nic" target="_top") nic.gallardo@gmail.com
+            a(href="mailto:nic.gallardo@gmail.com?Subject=Hello" target="_top") nic.gallardo@gmail.com
+      div(class="row")  
+        div(class="col-md-4 text-right")
+          img(src="images/twitter.png" width="30%")
+        div(class="col-md-6")
+          h2(class="text-left vertical-center")
+            a(href="https://twitter.com/fullstacknic" class="font-white") @fullstacknic
+      
+      div(class="row")  
+        div(class="col-md-4 text-right")
+          img(src="images/github_logo.png" width="20%")
+        div(class="col-md-6")
+          h2(class="text-left vertical-center")
+            a(href="https://github.com/nicgallardo" class="font-white") /nicgallardo
+      
+        div(class="col-md-1 col-md-offset-11")
+          h4(class="font-white" ng-mouseover="contact = false")
+            span(class="glyphicon glyphicon-remove")
+     
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+  script(src="/javascripts/scripts.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js")
